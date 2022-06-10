@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  dapr.publishapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  dapr.publishapi.dapr:
+    command: ["./daprd",
+      "-app-id", "dapr.publishapi",
+      "-app-port", "80",
+      "-components-path", "/components",
+      "-config", "/configurations/config.yaml"
+      ]
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configurations/:/configurations"
+
+  dapr.subscribeapi.dapr:
+    command: ["./daprd",
+      "-app-id", "dapr.subscribeapi",
+      "-app-port", "80",
+      "-components-path", "/components",
+      "-config", "/configurations/config.yaml"
+      ]
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configurations/:/configurations"
+
+  #Pub-Sub
+  rabbitmq:
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - "RABBITMQ_DEFAULT_USER:guest"
+      - "RABBITMQ_DEFAULT_PASS:guest"
+
+  #State
+  redis:
+    ports:
+    - "6379:6379"
