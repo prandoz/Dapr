@@ -21,6 +21,9 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configurations", "{88894CA0-4B68-4656-8AE2-8F180192B58E}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\configurations\config.yaml = dapr\configurations\config.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
