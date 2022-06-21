@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   dapr.publishapi:
-    #image: ${DOCKER_REGISTRY-}daprpublishapi
+    container_name: dapr.publishapi
     image: dapr/publishapi
     build:
       context: .
@@ -11,14 +11,14 @@ services:
       - rabbitmq
 
   dapr.publishapi.dapr:
-    container_name: dapr.publishapi
+    container_name: dapr.publishapi.dapr
     image: "daprio/daprd:1.2.0"
     network_mode: "service:dapr.publishapi"
     depends_on:
       - dapr.publishapi
 
   dapr.subscribeapi:
-    #image: ${DOCKER_REGISTRY-}daprsubscribeapi
+    container_name: dapr.subscribeapi
     image: dapr/subscribeapi
     build:
       context: .
@@ -27,11 +27,59 @@ services:
       - rabbitmq
 
   dapr.subscribeapi.dapr:
-    container_name: dapr.subscribeapi
+    container_name: dapr.subscribeapi.dapr
     image: "daprio/daprd:1.2.0"
     network_mode: "service:dapr.subscribeapi"
     depends_on:
       - dapr.subscribeapi
+
+  dapr.othersubscribeapi:
+    container_name: dapr.othersubscribeapi
+    image: dapr/othersubscribeapi
+    build:
+      context: .
+      dockerfile: server/Dapr.OtherSubscribeApi/Dockerfile
+    depends_on:
+      - rabbitmq
+
+  dapr.othersubscribeapi.dapr:
+    container_name: dapr.othersubscribeapi.dapr
+    image: "daprio/daprd:1.2.0"
+    network_mode: "service:dapr.othersubscribeapi"
+    depends_on:
+      - dapr.othersubscribeapi
+
+  dapr.subscribeyamlapi:
+    container_name: dapr.subscribeyamlapi
+    image: dapr/subscribeyamlapi
+    build:
+      context: .
+      dockerfile: server/Dapr.SubscribeYamlApi/Dockerfile
+    depends_on:
+      - rabbitmq
+
+  dapr.subscribeyamlapi.dapr:
+    container_name: dapr.subscribeyamlapi.dapr
+    image: "daprio/daprd:1.2.0"
+    network_mode: "service:dapr.subscribeyamlapi"
+    depends_on:
+      - dapr.subscribeyamlapi
+
+  dapr.othersubscribebyyamlapi:
+    container_name: dapr.othersubscribebyyamlapi
+    image: dapr/othersubscribebyyamlapi
+    build:
+      context: .
+      dockerfile: server/Dapr.OtherSubscribeByYamlApi/Dockerfile
+    depends_on:
+      - rabbitmq
+
+  dapr.othersubscribebyyamlapi.dapr:
+    container_name: dapr.othersubscribebyyamlapi.dapr
+    image: "daprio/daprd:1.2.0"
+    network_mode: "service:dapr.othersubscribebyyamlapi"
+    depends_on:
+      - dapr.othersubscribebyyamlapi
 
   rabbitmq:
     container_name: rabbitmq

@@ -1,14 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Dapr.SubscribeApi.Controllers;
-
+namespace Dapr.SubscribeYamlApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class SubscribeController : ControllerBase
+public class SubscribeYamlController : ControllerBase
 {
-	[Topic("pubsub", "newPub")]
 	[HttpPost]
-	public void ByCode(int id)
+	public void ByYaml(int id)
 	{
 		Console.WriteLine("Subscriber by code received : " + id);
 	}

@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{D6A23D03-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{46E5EC38-1648-4B1E-8A1A-026BAAC80870}"
 	ProjectSection(SolutionItems) = preProject
+		dapr\components\othersub.yaml = dapr\components\othersub.yaml
 		dapr\components\pubsub.yaml = dapr\components\pubsub.yaml
+		dapr\components\sub.yaml = dapr\components\sub.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configurations", "{88894CA0-4B68-4656-8AE2-8F180192B58E}"
@@ -22,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configura
 	EndProjectSection
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2A3F3451-4614-4838-9947-4374438D7CB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.OtherSubscribeApi", "server\Dapr.OtherSubscribeApi\Dapr.OtherSubscribeApi.csproj", "{15F09A64-67E2-43C6-B296-CC579975639B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.SubscribeYamlApi", "server\Dapr.SubscribeYamlApi\Dapr.SubscribeYamlApi.csproj", "{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapr.OtherSubscribeByYamlApi", "server\Dapr.OtherSubscribeByYamlApi\Dapr.OtherSubscribeByYamlApi.csproj", "{49D9015F-49DC-4D23-AF6B-E5181A126CA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +49,18 @@ Global
 		{2A3F3451-4614-4838-9947-4374438D7CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A3F3451-4614-4838-9947-4374438D7CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A3F3451-4614-4838-9947-4374438D7CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F09A64-67E2-43C6-B296-CC579975639B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F09A64-67E2-43C6-B296-CC579975639B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F09A64-67E2-43C6-B296-CC579975639B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F09A64-67E2-43C6-B296-CC579975639B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D9015F-49DC-4D23-AF6B-E5181A126CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D9015F-49DC-4D23-AF6B-E5181A126CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D9015F-49DC-4D23-AF6B-E5181A126CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D9015F-49DC-4D23-AF6B-E5181A126CA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +70,9 @@ Global
 		{FAB2A7B1-CEB0-4C84-AB8D-38F1A53F252A} = {6151EC31-8514-4E18-B4C2-28313D611D3F}
 		{46E5EC38-1648-4B1E-8A1A-026BAAC80870} = {D6A23D03-B36C-4DBB-8906-D97CF39D0F91}
 		{88894CA0-4B68-4656-8AE2-8F180192B58E} = {D6A23D03-B36C-4DBB-8906-D97CF39D0F91}
+		{15F09A64-67E2-43C6-B296-CC579975639B} = {6151EC31-8514-4E18-B4C2-28313D611D3F}
+		{82DDD1A5-1E8B-4A7E-AA3B-6086F789EB26} = {6151EC31-8514-4E18-B4C2-28313D611D3F}
+		{49D9015F-49DC-4D23-AF6B-E5181A126CA8} = {6151EC31-8514-4E18-B4C2-28313D611D3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D06E12D7-9459-4361-9BCE-1E534E3951EB}

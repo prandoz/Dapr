@@ -11,3 +11,5 @@ spec:
     value: "amqp://rabbitmq:5672"
   - name: durable
     value: true
+  - name: exchangeKind
+    value: topic
