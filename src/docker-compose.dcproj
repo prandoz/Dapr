@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>1423f039-eddf-46ca-8f52-3ca2ebd9c635</ProjectGuid>
+    <ProjectGuid>2a3f3451-4614-4838-9947-4374438d7cb7</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>dapr.publishapi</DockerServiceName>

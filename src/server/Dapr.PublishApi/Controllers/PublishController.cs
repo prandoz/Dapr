@@ -16,8 +16,13 @@ public class PublishController : ControllerBase
 	[HttpPut("publish")]
 	public async Task PublishAsync([FromBody] int id)
 	{
-		await _daprClient.PublishEventAsync("pubsub", "daprs", id);
+		await _daprClient.PublishEventAsync("pubsub", "newPub", new TmpDto { id = id });
 
 		Console.WriteLine("Published id : " + id);
 	}
+}
+
+public class TmpDto
+{
+	public int id { get; set; }
 }

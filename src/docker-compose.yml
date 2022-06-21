@@ -2,45 +2,37 @@ version: '3.4'
 
 services:
   dapr.publishapi:
-    container_name: dapr.publishapi
-    image: dapr/publish.api
+    #image: ${DOCKER_REGISTRY-}daprpublishapi
+    image: dapr/publishapi
     build:
       context: .
       dockerfile: server/Dapr.PublishApi/Dockerfile
     depends_on:
       - rabbitmq
-      - redis
-  
+
   dapr.publishapi.dapr:
-    container_name: dapr.publishapi.dapr
-    image: "daprio/daprd:1.7.3"
+    container_name: dapr.publishapi
+    image: "daprio/daprd:1.2.0"
     network_mode: "service:dapr.publishapi"
     depends_on:
       - dapr.publishapi
 
   dapr.subscribeapi:
-    container_name: dapr.subscribeapi
-    image: dapr/subscribe.api
+    #image: ${DOCKER_REGISTRY-}daprsubscribeapi
+    image: dapr/subscribeapi
     build:
       context: .
       dockerfile: server/Dapr.SubscribeApi/Dockerfile
     depends_on:
       - rabbitmq
-      - redis
 
   dapr.subscribeapi.dapr:
-    container_name: dapr.subscribeapi.dapr
-    image: "daprio/daprd:1.7.3"
+    container_name: dapr.subscribeapi
+    image: "daprio/daprd:1.2.0"
     network_mode: "service:dapr.subscribeapi"
     depends_on:
       - dapr.subscribeapi
 
-  #Pub-Sub
   rabbitmq:
     container_name: rabbitmq
-    image: rabbitmq:3-management
-
-  #State
-  redis:
-    container_name: redis
-    image: redis:alpine
+    image: rabbitmq:3-management-alpine

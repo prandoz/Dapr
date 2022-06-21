@@ -6,15 +6,10 @@ namespace Dapr.SubscribeApi.Controllers;
 [ApiController]
 public class SubscribeController : ControllerBase
 {
-	[HttpPost]
-	public void ByYaml([FromBody] int id)
-	{
-		Console.WriteLine("Subscriber by yaml received : " + id);
-	}
 
-	[Topic("pubsub", "daprs")]
+	[Topic("pubsub", "newPub")]
 	[HttpPost]
-	public void ByCode([FromBody] int id)
+	public void ByCode(int id)
 	{
 		Console.WriteLine("Subscriber by code received : " + id);
 	}

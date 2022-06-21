@@ -13,17 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{D6A23D03-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{46E5EC38-1648-4B1E-8A1A-026BAAC80870}"
 	ProjectSection(SolutionItems) = preProject
-		dapr\components\rabbit.yaml = dapr\components\rabbit.yaml
-		dapr\components\redis.yaml = dapr\components\redis.yaml
-		dapr\components\subscription.yaml = dapr\components\subscription.yaml
+		dapr\components\pubsub.yaml = dapr\components\pubsub.yaml
 	EndProjectSection
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configurations", "{88894CA0-4B68-4656-8AE2-8F180192B58E}"
 	ProjectSection(SolutionItems) = preProject
 		dapr\configurations\config.yaml = dapr\configurations\config.yaml
 	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2A3F3451-4614-4838-9947-4374438D7CB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,10 @@ Global
 		{FAB2A7B1-CEB0-4C84-AB8D-38F1A53F252A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB2A7B1-CEB0-4C84-AB8D-38F1A53F252A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB2A7B1-CEB0-4C84-AB8D-38F1A53F252A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1423F039-EDDF-46CA-8F52-3CA2EBD9C635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3F3451-4614-4838-9947-4374438D7CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3F3451-4614-4838-9947-4374438D7CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3F3451-4614-4838-9947-4374438D7CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3F3451-4614-4838-9947-4374438D7CB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

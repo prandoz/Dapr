@@ -9,3 +9,5 @@ spec:
   metadata:
   - name: host
     value: "amqp://rabbitmq:5672"
+  - name: durable
+    value: true
